@@ -17,6 +17,15 @@ class Houses extends BaseController
         return view('show_all_houses', $data);
     }
 
+    public function select()
+    {
+        $selection = $_POST["selection"];
+        $sql_selection = "SELECT " . $selection . " FROM `HOUSE`";
+        $data['selection'] = $this->db->simpleQuery($sql_selection);
+        $data['query_string'] = $selection;
+        return view('select_one_column_houses', $data);
+    }
+
     //GET redirect to an interface allowed a user to input
     //http://realtor:8888/houses/new
     public function new() {

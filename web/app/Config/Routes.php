@@ -38,6 +38,7 @@ $routes->add('/houses/new', 'Houses::new');
 $routes->post('/houses/create', 'Houses::create');
 $routes->add('/houses/edit/(:num)', 'Houses::edit/$1');
 $routes->post('/houses/update', 'Houses::update');
+$routes->post('/houses/avg', 'Houses::avg');
 
 $routes->add('/neighbor', 'Neighbourhood::index');
 $routes->post('/neighbor/delete/', 'Neighbourhood::destroy');

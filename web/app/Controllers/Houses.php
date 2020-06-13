@@ -107,4 +107,12 @@ class Houses extends BaseController
         $data["filter_condition_down"] = $price_lowbound;
         return view('filter_houses', $data);
     }
+
+    public function avg(){
+        $sql_groupBy = "CREATE OR REPLACE VIEW GourpByTable AS SELECT PROPERTY_TYPE_ID, AVG(LISTING_PRICE) AS AVG, count(*) AS COUNT FROM `HOUSE` GROUP by PROPERTY_TYPE_ID;";
+        $sql_join = "SELECT GourpByTable.PROPERTY_TYPE_ID, TYPE, AVG, COUNT FROM GourpByTable INNER JOIN PROPERTY_TYPE on. PROPERTY_TYPE.PROPERTY_TYPE_ID = GourpByTable.PROPERTY_TYPE_ID;";
+        $this->db->query($sql_groupBy);
+        $data['house_groupBy'] = $this->db->query($sql_join)->getResult();
+        return view('avg_price', $data);
+    }
 }

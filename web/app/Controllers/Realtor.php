@@ -24,6 +24,12 @@ class Realtor extends BaseController
         $data['realtor_id'] = $realtor_id;
 
         return view('realtor_delegate_houses', $data);
+    }
 
+    public function findTopRealtor(){
+        $sql = "SELECT REALTOR.REALTOR_ID, REALTOR.NAME FROM REALTOR WHERE NOT EXISTS (SELECT * FROM PROPERTY_TYPE WHERE NOT EXISTS (SELECT HOUSE.REALTOR_ID FROM HOUSE WHERE REALTOR.REALTOR_ID = HOUSE.REALTOR_ID AND HOUSE.PROPERTY_TYPE_ID = PROPERTY_TYPE.PROPERTY_TYPE_ID))";
+        $housesList_query = $this->db->query($sql);
+        $data['topRealtor'] = $housesList_query->getResult();
+        return view('top_realtor', $data);
     }
 }

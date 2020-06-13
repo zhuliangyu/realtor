@@ -45,6 +45,7 @@ $routes->post('/neighbor/delete/', 'Neighbourhood::destroy');
 
 $routes->get('/realtors/(:num)/houses', 'Realtor::delegateHouses/$1');
 $routes->add('/realtors', 'Realtor::index');
+$routes->add('/realtors/top', 'Realtor::findTopRealtor');
 
 /**
  * --------------------------------------------------------------------

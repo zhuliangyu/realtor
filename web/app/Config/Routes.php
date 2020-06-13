@@ -47,6 +47,8 @@ $routes->get('/realtors/(:num)/houses', 'Realtor::delegateHouses/$1');
 $routes->add('/realtors', 'Realtor::index');
 $routes->add('/realtors/top', 'Realtor::findTopRealtor');
 
+$routes->add('/address', 'Address::index');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

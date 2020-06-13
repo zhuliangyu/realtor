@@ -1,7 +1,9 @@
-<button><a href="<?php echo site_url('neighbor');?>">Show all neighbour</a></button>
 <button><a href="<?php echo site_url('houses/new');?>">Insert a house</a></button>
 <button><a href="<?php echo site_url('houses/avg');?>">Avg price</a></button>
 <button><a href="<?php echo site_url('realtors');?>">Show all realtors</a></button>
+<button><a href="<?php echo site_url('neighbor');?>">Show all neighbour</a></button>
+<button><a href="<?php echo site_url('address');?>">Show all address</a></button>
+
 <h4>Show houses</h4>
 <style type="text/css">
     .tg  {border-collapse:collapse;border-spacing:0;}

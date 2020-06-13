@@ -57,3 +57,5 @@
     </select>
     <input type="submit" value="Select" name="btnadd">
 </form>
+
+<h3>Total number of listing: <?php echo $houseList_count[0]->COUNT ?></h3>

@@ -11,9 +11,11 @@ class Houses extends BaseController
     //http://realtor:8888/houses
     public function index()
     {
-        $sql = "SELECT HOUSE_ID, ADDRESS_ID, LISTING_DATE, LISTING_PRICE, SELLER_ID, REALTOR_ID, FLOOR_SPACE, PROPERTY_TYPE_ID FROM `HOUSE`";
-        $houseList_query = $this->db->query($sql);
+        $sql_showAll = "SELECT HOUSE_ID, ADDRESS_ID, LISTING_DATE, LISTING_PRICE, SELLER_ID, REALTOR_ID, FLOOR_SPACE, PROPERTY_TYPE_ID FROM `HOUSE`";
+        $sql_count = "SELECT COUNT(*) AS COUNT FROM HOUSE;";
+        $houseList_query = $this->db->query($sql_showAll);
         $data['houseList'] = $houseList_query->getResult();
+        $data['houseList_count'] = $this->db->query($sql_count)->getResult();
         return view('show_all_houses', $data);
     }
 

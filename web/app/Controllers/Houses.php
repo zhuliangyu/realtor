@@ -61,17 +61,40 @@ class Houses extends BaseController
     }
 
     //GET edirect to an interface allowed a user to input
-    //http://realtor:8888/houses/1/edit
+    //http://realtor:8888/houses/edit/1
     public function edit($house_id) {
-        echo "edit";
-        echo $house_id;
-        return view('edit_house');
+        $sql_address_id = "SELECT ADDRESS_ID FROM `ADDRESS`";
+        $sql_seller_id = "SELECT CUSTOMER_ID FROM `SELLER`";
+        $sql_realtor_id = "SELECT REALTOR_ID FROM `REALTOR`";
+        $sql_property_type_id = "SELECT PROPERTY_TYPE_ID FROM `PROPERTY_TYPE`";
+
+        $data['address_id_list'] = $this->db->query($sql_address_id)->getResult();
+        $data['seller_id_list'] = $this->db->query($sql_seller_id)->getResult();
+        $data['realtor_id_list'] = $this->db->query($sql_realtor_id)->getResult();
+        $data['property_type_id_list'] = $this->db->query($sql_property_type_id)->getResult();
+
+        $sql ="SELECT HOUSE_ID, ADDRESS_ID, LISTING_DATE, LISTING_PRICE, SELLER_ID, REALTOR_ID, FLOOR_SPACE, PROPERTY_TYPE_ID FROM `HOUSE` WHERE HOUSE_ID = " . $house_id;
+        $data['house_edit'] = $this->db->query($sql)->getResult();
+
+        return view('edit_house', $data);
 
     }
 
     //PUT update a house
     public function update() {
+        $address_id = $_POST["address_id"];
+        $house_id = $_POST["house_id"];
+        $listing_date = $_POST["listing_date"];
+        $listing_price = $_POST["listing_price"];
+        $seller_id = $_POST["seller_id"];
+        $realtor_id = $_POST["realtor_id"];
+        $floor_space = $_POST["floor_space"];
+        $property_type_id = $_POST["property_type_id"];
 
+        $sql = "UPDATE `HOUSE` SET `ADDRESS_ID` = ?, `LISTING_DATE` = ?, `LISTING_PRICE` = ?, `SELLER_ID` = ?, `REALTOR_ID` = ?, `FLOOR_SPACE` = ?, `PROPERTY_TYPE_ID` = ? WHERE `HOUSE`.`HOUSE_ID` = " . $house_id;
+
+        $this->db->query($sql, [$address_id, $listing_date, $listing_price, $seller_id, $realtor_id, $floor_space, $property_type_id])->getResult();
+        return redirect("houses");
     }
 
     //POST price filter

@@ -36,7 +36,8 @@ $routes->post('/houses/filter/', 'Houses::price_filter');
 $routes->add('/houses', 'Houses::index');
 $routes->add('/houses/new', 'Houses::new');
 $routes->post('/houses/create', 'Houses::create');
-$routes->add('/houses/(:num)/edit', 'Houses::edit/$1');
+$routes->add('/houses/edit/(:num)', 'Houses::edit/$1');
+$routes->post('/houses/update', 'Houses::update');
 
 $routes->add('/neighbor', 'Neighbourhood::index');
 $routes->post('/neighbor/delete/', 'Neighbourhood::destroy');

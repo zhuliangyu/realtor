@@ -36,7 +36,7 @@
         <td class="tg-0pky"><?php echo $row->REALTOR_ID; ?></td>
         <td class="tg-0pky"><?php echo $row->FLOOR_SPACE; ?></td>
         <td class="tg-0pky"><?php echo $row->PROPERTY_TYPE_ID; ?></td>
-        <td class="tg-0pky"><button>Update</button></td>
+        <td class="tg-0pky"><button><a href="<?php echo site_url('houses/edit/' . $row->HOUSE_ID);?>">Update</a></button></td>
     </tr>
     <?php } ?>
 

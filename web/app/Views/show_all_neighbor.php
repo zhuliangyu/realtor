@@ -40,7 +40,7 @@
             <option value="<?php echo $row->NEIGHBOR_ID ?>"><?php echo $row->NEIGHBOR_ID ?></option>
         <?php } ?>
     </select>
-    <input type="submit" value="Select" name="btnadd">
+    <input type="submit" value="Delete" name="btndelete">
 </form>
 
 <button><a href=<?php echo site_url('houses');?>>Go Back</a></button>

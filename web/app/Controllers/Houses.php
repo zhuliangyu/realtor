@@ -31,13 +31,33 @@ class Houses extends BaseController
     //GET redirect to an interface allowed a user to input
     //http://realtor:8888/houses/new
     public function new() {
-        echo "new";
-        return view('create_house');
+        $sql_address_id = "SELECT ADDRESS_ID FROM `ADDRESS`";
+        $sql_seller_id = "SELECT CUSTOMER_ID FROM `SELLER`";
+        $sql_realtor_id = "SELECT REALTOR_ID FROM `REALTOR`";
+        $sql_property_type_id = "SELECT PROPERTY_TYPE_ID FROM `PROPERTY_TYPE`";
+
+        $data['address_id_list'] = $this->db->query($sql_address_id)->getResult();
+        $data['seller_id_list'] = $this->db->query($sql_seller_id)->getResult();
+        $data['realtor_id_list'] = $this->db->query($sql_realtor_id)->getResult();
+        $data['property_type_id_list'] = $this->db->query($sql_property_type_id)->getResult();
+
+        return view('create_house', $data);
     }
 
     //POST insert a house into DB
     public function create() {
+        echo "create";
+        $address_id = $_POST["address_id"];
+        $listing_date = $_POST["listing_date"];
+        $listing_price = $_POST["listing_price"];
+        $seller_id = $_POST["seller_id"];
+        $realtor_id = $_POST["realtor_id"];
+        $floor_space = $_POST["floor_space"];
+        $property_type_id = $_POST["property_type_id"];
 
+        $sql_insert = "INSERT INTO `HOUSE` (`HOUSE_ID`, `ADDRESS_ID`, `LISTING_DATE`, `LISTING_PRICE`, `SELLER_ID`, `REALTOR_ID`, `FLOOR_SPACE`, `PROPERTY_TYPE_ID`) VALUES (NULL, ? , ? , ? , ? , ?, ?, ?)";
+        $this->db->query($sql_insert, [$address_id, $listing_date, $listing_price, $seller_id, $realtor_id, $floor_space, $property_type_id])->getResult();
+        return redirect("houses");
     }
 
     //GET edirect to an interface allowed a user to input

@@ -36,6 +36,8 @@ $routes->add('/houses', 'Houses::index');
 $routes->add('/houses/new', 'Houses::new');
 $routes->add('/houses/(:num)/edit', 'Houses::edit/$1');
 
+$routes->add('/neighbor', 'Neighbourhood::index');
+$routes->post('/neighbor/delete/', 'Neighbourhood::destroy');
 
 /**
  * --------------------------------------------------------------------

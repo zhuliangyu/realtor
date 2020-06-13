@@ -51,12 +51,4 @@ class Houses extends BaseController
     public function update() {
 
     }
-
-    //delete a house from DB
-    public function destroy(){
-
-    }
-
-
-
 }

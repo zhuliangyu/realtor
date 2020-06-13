@@ -42,20 +42,35 @@
     </tbody>
 </table>
 
-<form method="post" action="<?php echo site_url('houses/select');?>">
-    only show
-    <select name="selection">
-        <option value="HOUSE_ID">HOUSE_ID</option>
-        <option value="ADDRESS_ID">ADDRESS_ID</option>
-        <option value="LISTING_DATE">LISTING_DATE</option>
-        <option value="LISTING_PRICE">LISTING_PRICE</option>
-        <option value="SELLER_ID">SELLER_ID</option>
-        <option value="SELLER_ID">SELLER_ID</option>
-        <option value="REALTOR_ID">REALTOR_ID</option>
-        <option value="FLOOR_SPACE">FLOOR_SPACE</option>
-        <option value="PROPERTY_TYPE_ID">PROPERTY_TYPE_ID</option>
-    </select>
-    <input type="submit" value="Select" name="btnadd">
-</form>
+<div>
+    <form method="post" action="<?php echo site_url('houses/select');?>">
+        only show
+        <select name="selection">
+            <option value="HOUSE_ID">HOUSE_ID</option>
+            <option value="ADDRESS_ID">ADDRESS_ID</option>
+            <option value="LISTING_DATE">LISTING_DATE</option>
+            <option value="LISTING_PRICE">LISTING_PRICE</option>
+            <option value="SELLER_ID">SELLER_ID</option>
+            <option value="SELLER_ID">SELLER_ID</option>
+            <option value="REALTOR_ID">REALTOR_ID</option>
+            <option value="FLOOR_SPACE">FLOOR_SPACE</option>
+            <option value="PROPERTY_TYPE_ID">PROPERTY_TYPE_ID</option>
+        </select>
+        <input type="submit" value="Select" name="btnadd">
+    </form>
+</div>
 
-<h3>Total number of listing: <?php echo $houseList_count[0]->COUNT ?></h3>
+<div>
+    <h3>Total number of listing: <?php echo $houseList_count[0]->COUNT ?></h3>
+</div>
+
+<div>
+<h2>Price filter:</h2>
+<form method="post" action="<?php echo site_url('houses/filter'); ?>">
+    <label for="down">From</label>
+    <input type="text" name="down">
+    <label for="up">to</label>
+    <input type="text" name="up">
+    <input type="submit" value="filter" name="btnfilter">
+</form>
+</div>

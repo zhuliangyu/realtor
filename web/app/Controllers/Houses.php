@@ -53,4 +53,15 @@ class Houses extends BaseController
     public function update() {
 
     }
+
+    //POST price filter
+    public function price_filter() {
+        $price_upbound = $_POST["up"];
+        $price_lowbound = $_POST["down"];
+        $sql = "SELECT HOUSE_ID, ADDRESS_ID, LISTING_DATE, LISTING_PRICE, SELLER_ID, REALTOR_ID, FLOOR_SPACE, PROPERTY_TYPE_ID  FROM `HOUSE` WHERE LISTING_PRICE > ? and LISTING_PRICE < ?";
+        $data['houseList_filter'] = $this->db->query($sql, [$price_lowbound, $price_upbound])->getResult();
+        $data["filter_condition_up"] = $price_upbound;
+        $data["filter_condition_down"] = $price_lowbound;
+        return view('filter_houses', $data);
+    }
 }

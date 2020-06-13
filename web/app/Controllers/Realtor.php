@@ -16,4 +16,14 @@ class Realtor extends BaseController
         $data['realtorList'] = $realtorList_query->getResult();
         return view('show_all_realtors', $data);
     }
+
+    public function delegateHouses($realtor_id){
+        $sql = "SELECT HOUSE.HOUSE_ID, HOUSE.ADDRESS_ID, HOUSE.LISTING_PRICE, HOUSE.LISTING_DATE, HOUSE.SELLER_ID, HOUSE.REALTOR_ID, HOUSE.FLOOR_SPACE, HOUSE.PROPERTY_TYPE_ID FROM REALTOR INNER JOIN HOUSE ON REALTOR.REALTOR_ID = HOUSE.REALTOR_ID WHERE REALTOR.REALTOR_ID = " . $realtor_id;
+        $housesList_query = $this->db->query($sql);
+        $data['houseList'] = $housesList_query->getResult();
+        $data['realtor_id'] = $realtor_id;
+
+        return view('realtor_delegate_houses', $data);
+
+    }
 }

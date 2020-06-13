@@ -43,6 +43,7 @@ $routes->post('/houses/avg', 'Houses::avg');
 $routes->add('/neighbor', 'Neighbourhood::index');
 $routes->post('/neighbor/delete/', 'Neighbourhood::destroy');
 
+$routes->get('/realtors/(:num)/houses', 'Realtor::delegateHouses/$1');
 $routes->add('/realtors', 'Realtor::index');
 
 /**

@@ -24,7 +24,7 @@
             <td class="tg-0pky"><?php echo $row->REALTOR_ID; ?></td>
             <td class="tg-0pky"><?php echo $row->NAME; ?></td>
             <td class="tg-0pky"><?php echo $row->PHONE; ?></td>
-            <td class="tg-0pky"><button>Show all properties</button></td>
+            <td class="tg-0pky"><button><a href="<?php echo site_url('realtors/' . $row->REALTOR_ID) . "/houses";?>">Show all properties</a></button></td>
         </tr>
     <?php } ?>
 

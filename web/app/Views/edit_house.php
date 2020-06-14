@@ -1,6 +1,6 @@
 <h2>Edit House_id <?php echo $house_edit[0]->HOUSE_ID ?></h2>
 
-<form method="post" action="/houses/update">
+<form method="post" action="<?php echo site_url('houses/update');?>">
     address_id
     <select name="address_id">
         <?php foreach ($address_id_list as $row){ ?>

@@ -1,20 +1,54 @@
-<button><a href="<?php echo site_url('houses/new');?>">Insert a house</a></button>
-<button><a href="<?php echo site_url('houses/avg');?>">Avg price</a></button>
-<button><a href="<?php echo site_url('realtors');?>">Show all realtors</a></button>
-<button><a href="<?php echo site_url('neighbor');?>">Show all neighbour</a></button>
-<button><a href="<?php echo site_url('address');?>">Show all address</a></button>
+<button class="button"><a href="<?php echo site_url('houses/new');?>">Insert a House</a></button>
+<button class="button"><a href="<?php echo site_url('houses/avg');?>">Average Price</a></button>
+<button class="button"><a href="<?php echo site_url('realtors');?>">Show All Realtors</a></button>
+<button class="button"><a href="<?php echo site_url('neighbor');?>">Show All Neighbour</a></button>
+<button class="button"><a href="<?php echo site_url('address');?>">Show All Address</a></button>
 
-<h4>Show houses</h4>
 <style type="text/css">
+    table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    }
+    caption {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+    }
+    tr{
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: .35em;
+    }
     .tg  {border-collapse:collapse;border-spacing:0;}
     .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-        overflow:hidden;padding:10px 5px;word-break:normal;}
+        overflow:hidden;padding:.625em;word-break:normal;}
     .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-        font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        font-weight:normal;overflow:hidden;padding:.85em;word-break:normal;}
     .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
     .tg .tg-0lax{text-align:left;vertical-align:top}
+    h2 {
+        text-align: left;
+    }
+    h3 {
+        text-align: right
+    }
+    .button {
+        background-color: #f8f8f8;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        text-align: center;
+}
 </style>
 <table class="tg">
+    <caption>Show Houses</caption>
     <thead>
     <tr>
         <th class="tg-0pky">HOUSE_ID</th>
@@ -49,7 +83,7 @@
 
 <div>
     <form method="post" action="<?php echo site_url('houses/select');?>">
-        only show
+        Only Show
         <select name="selection">
             <option value="HOUSE_ID">HOUSE_ID</option>
             <option value="ADDRESS_ID">ADDRESS_ID</option>
@@ -66,7 +100,7 @@
 </div>
 
 <div>
-    <h3>Total number of listing: <?php echo $houseList_count[0]->COUNT ?></h3>
+    <h3>Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
 </div>
 
 <div>

@@ -16,6 +16,13 @@
     caption {
         font-size: 1.5em;
         margin: .5em 0 .75em;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+        font-weight: bold;
+        padding-left: 750px;
     }
     tr{
         background-color: #f8f8f8;
@@ -28,7 +35,7 @@
     .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
         font-weight:normal;overflow:hidden;padding:.85em;word-break:normal;}
     .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-    .tg .tg-0lax{text-align:left;vertical-align:top}
+    .tg .tg-0lax{border-color:inherit;text-align:left;vertical-align:top}
     h2 {
         text-align: left;
     }
@@ -39,14 +46,36 @@
         background-color: #f8f8f8;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding-left:100px;
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
         display: inline-block;
         font-size: 20px;
         text-align: center;
 }
+form {
+    border: 0px solid #ccc;
+    border-color: white;
+    border-collapse: collapse;
+    padding-left:620px;
+    padding-top: 10px;
+    width: 100%;
+    table-layout: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    }
+.listings {
+  background-image: url("https://i.picsum.photos/id/1031/5446/3063.jpg?hmac=Zg0Vd3Bb7byzpvy-vv-fCffBW9EDp1coIbBFdEjeQWE");
+  background-color: #cccccc;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.9;
+}
 </style>
+<div class = "listings">
 <table class="tg">
     <caption>Show Houses</caption>
     <thead>
@@ -100,16 +129,18 @@
 </div>
 
 <div>
-    <h3>Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
+    <h3 style="font-size: 24px">Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
 </div>
 
 <div>
-<h2>Price filter:</h2>
+<h2>Price Filter</h2>
 <form method="post" action="<?php echo site_url('houses/filter'); ?>">
     <label for="down">From</label>
     <input type="text" name="down">
-    <label for="up">to</label>
+    <label for="up">To</label>
     <input type="text" name="up">
     <input type="submit" value="filter" name="btnfilter">
 </form>
+</div>
+
 </div>

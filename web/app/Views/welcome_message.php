@@ -8,12 +8,13 @@ img {
 .headline {
     font-family: Trebuchet MS, Helvetica, sans-serif;
     font-size: 3.5vw;
-    padding: 2px 2px;
     text-align: center;
-    background-color: white;
-    color: lightblue;
-    opacity: 1;
+    background-color: rgb(255,255,255);
+    opacity: 0.9;
+    color: skyblue;
     margin-top: 30px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .button {
@@ -21,15 +22,26 @@ img {
   border: none;
   border-radius:10px;
   opacity: 0.8;
-  color: lightblue;
+  color: dodgerblue;
   padding: 8px 8px;
   font-family: Trebuchet MS, Helvetica, sans-serif;
   text-align: center;
   display: inline-block;
+  text-decoration: none;
   font-size: 2.2vw;
   position: center;
   margin-left: 39vw;
   margin-top: 9.6vw;
+}
+
+.button:visited {
+  color: dodgerblue;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.button:hover {
+  color: deepskyblue;
 }
 
 .body {
@@ -49,4 +61,6 @@ img {
 </div> -->
 </body>
 
-<button class="button"><a href="<?php echo site_url('houses')?>">View Current Listing</a></button>
+<!-- <button class="button"><a href="<?php echo site_url('houses')?>">View Current Listing</a></button> -->
+
+<a class="button" href="<?php echo site_url('houses')?>">View Current Listing</a>

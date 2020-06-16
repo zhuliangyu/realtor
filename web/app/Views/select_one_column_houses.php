@@ -1,6 +1,4 @@
-<?php
-echo "one column of house"
-?>
+<h1>Select columns of the house table</h1>
 
 <?php if (isset($selection)){ ?>
     <style type="text/css">
@@ -14,15 +12,21 @@ echo "one column of house"
     </style>
     <table class="tg">
         <thead>
-        <tr>
-            <th class="tg-0pky"><?php echo $query_string ?></th>
-        </tr>
+            <tr>
+                <?php foreach ($query_string as $query_column){ ?>
+                    <th class="tg-0pky"><?php echo $query_column ?></th>
+                <?php } ?>
+            </tr>
         </thead>
         <tbody>
 
         <?php foreach ($selection as $row){ ?>
             <tr>
-                <td class="tg-0pky"><?php echo $row[$query_string]; ?></td>
+                <?php foreach ($query_string as $column){ ?>
+                    <td>
+                        <?php echo $row->$column; ?>
+                    </td>
+                <?php } ?>
             </tr>
         <?php } ?>
 

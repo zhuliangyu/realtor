@@ -139,19 +139,17 @@ form {
 </table>
 
 <div>
-    <form style = "color: black; font-size: 0.8em" method="post" action="<?php echo site_url('houses/select');?>">
+    <form style = "color: black; font-size: 0.8em; margin-top: 25px" method="post" action="<?php echo site_url('houses/select');?>">
         Only Show
-        <select name="selection">
-            <option value="HOUSE_ID">HOUSE_ID</option>
-            <option value="ADDRESS_ID">ADDRESS_ID</option>
-            <option value="LISTING_DATE">LISTING_DATE</option>
-            <option value="LISTING_PRICE">LISTING_PRICE</option>
-            <option value="SELLER_ID">SELLER_ID</option>
-            <option value="SELLER_ID">SELLER_ID</option>
-            <option value="REALTOR_ID">REALTOR_ID</option>
-            <option value="FLOOR_SPACE">FLOOR_SPACE</option>
-            <option value="PROPERTY_TYPE_ID">PROPERTY_TYPE_ID</option>
-        </select>
+        <label><input name="selection_checkbox[]" type="checkbox" value="HOUSE_ID" />HOUSE_ID </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="ADDRESS_ID" />ADDRESS_ID </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="LISTING_DATE" />LISTING_DATE </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="LISTING_PRICE" />LISTING_PRICE </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="SELLER_ID" />SELLER_ID </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="REALTOR_ID" />REALTOR_ID </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="FLOOR_SPACE" />FLOOR_SPACE </label>
+        <label><input name="selection_checkbox[]" type="checkbox" value="PROPERTY_TYPE_ID" />PROPERTY_TYPE_ID </label>
+
         <input type="submit" value="Select" name="btnadd">
     </form>
 </div>

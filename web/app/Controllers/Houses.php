@@ -21,10 +21,20 @@ class Houses extends BaseController
 
     public function select()
     {
-        $selection = $_POST["selection"];
-        $sql_selection = "SELECT " . $selection . " FROM `HOUSE`";
-        $data['selection'] = $this->db->simpleQuery($sql_selection);
-        $data['query_string'] = $selection;
+        $selection_array = $_POST["selection_checkbox"];
+        $selection_string = '';
+
+        foreach ($selection_array as $value) {
+            if ($selection_string == '') {
+                $selection_string = $value;
+            } else {
+                $selection_string = $selection_string . ', ' .$value;
+            }
+        }
+
+        $sql_selection = "SELECT " . $selection_string . " FROM `HOUSE`";
+        $data['selection'] = $this->db->query($sql_selection)->getResult();
+        $data['query_string'] = $selection_array;
         return view('select_one_column_houses', $data);
     }
 

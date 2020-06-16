@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->post('/houses/select/(:any)', 'Houses::select');
+$routes->post('/table/', 'Houses::fromTable');
 $routes->post('/houses/filter/', 'Houses::price_filter');
 $routes->add('/houses', 'Houses::index');
 $routes->add('/houses/new', 'Houses::new');

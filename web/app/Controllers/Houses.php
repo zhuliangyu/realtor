@@ -19,6 +19,24 @@ class Houses extends BaseController
         return view('show_all_houses', $data);
     }
 
+    public function fromTable(){
+        $table_name = $_POST["table"];
+        $sql = "SELECT * FROM " . $table_name;
+        $sql_tableSchema = "DESCRIBE " . $table_name;
+        $query_results = $this->db->query($sql)->getResult();
+        $query_tableSchema = $this->db->query($sql_tableSchema)->getResult();
+        $tableSchema = array();
+        foreach($query_tableSchema as $row){
+            array_push($tableSchema,$row->Field);
+        }
+
+        $data["query_results"] = $query_results;
+        $data["tableSchema"] = $tableSchema;
+        $data["tableName"] = $table_name;
+
+        return view("show_different_table", $data);
+    }
+
     public function select()
     {
         $selection_array = $_POST["selection_checkbox"];

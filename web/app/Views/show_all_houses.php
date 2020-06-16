@@ -10,6 +10,28 @@
 <a class="button" href="<?php echo site_url('neighbor');?>">Show All Neighbour</a>
 <a class="button" href="<?php echo site_url('address');?>">Show All Address</a>
 
+<form action="table" method="post">
+    Show
+    <select name="table" id="table">
+        <option value="REALTOR">realtor</option>
+        <option value="PROPERTY_TYPE">property_type</option>
+        <option value="ADDRESS">Address</option>
+        <option value="BUYERS">BUYERS</option>
+        <option value="CONTAINS_HISTORY_TRANSACTIONS">CONTAINS_HISTORY_TRANSACTIONS</option>
+        <option value="CUSTOMERS">CUSTOMERS</option>
+        <option value="HOUSE_INSPECTION">HOUSE_INSPECTION</option>
+        <option value="INSPECTION_RESULT">INSPECTION_RESULT</option>
+        <option value="INSPECTORS">INSPECTORS</option>
+        <option value="NEIGHBORHOOD">NEIGHBORHOOD</option>
+        <option value="OFFER_CONTRACT">OFFER_CONTRACT</option>
+        <option value="PROPERTY_TYPE">PROPERTY_TYPE</option>
+        <option value="SELLER">SELLER</option>
+    </select>
+    table
+    <input type="submit" value="Select" name="btnadd">
+
+</form>
+
 <style type="text/css">
     table {
     border: 1px solid #ccc;

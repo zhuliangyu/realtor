@@ -37,6 +37,33 @@ class Houses extends BaseController
         return view("show_different_table", $data);
     }
 
+    public function joinTable(){
+        $table_name = $_POST["table"];
+        //SELECT * FROM HOUSE INNER JOIN PREVIOUS_OWNERS ON HOUSE.HOUSE_ID = PREVIOUS_OWNERS.HOUSE_ID
+        $sql = "SELECT * FROM HOUSE INNER JOIN ". $table_name ." ON HOUSE.HOUSE_ID = " . $table_name . ".HOUSE_ID";
+        $query_results = $this->db->query($sql)->getResult();
+
+        $tableSchema = array();
+
+        $sql_tableSchema = "DESCRIBE HOUSE";
+        $query_tableSchema = $this->db->query($sql_tableSchema)->getResult();
+        foreach($query_tableSchema as $row){
+            array_push($tableSchema,$row->Field);
+        }
+
+        $sql_tableSchema = "DESCRIBE " . $table_name;
+        $query_tableSchema = $this->db->query($sql_tableSchema)->getResult();
+        foreach($query_tableSchema as $row){
+            array_push($tableSchema,$row->Field);
+        }
+
+        $data["query_results"] = $query_results;
+        $data["tableSchema"] = $tableSchema;
+        $data["tableName"] = $table_name;
+
+        return view("show_different_table", $data);
+    }
+
     public function select()
     {
         $selection_array = $_POST["selection_checkbox"];

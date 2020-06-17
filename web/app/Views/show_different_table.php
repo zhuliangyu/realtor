@@ -1,4 +1,4 @@
-<h1>Show <?php echo $tableName ?> Table</h1>
+<h1> <?php echo $tableName ?> Table</h1>
 
 <?php
 $query_results;

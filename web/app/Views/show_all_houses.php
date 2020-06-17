@@ -180,6 +180,17 @@ form {
     <h3>Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
 </div>
 
+<form action="jointable" method="post">
+    Join House table with
+    <select name="table" id="table">
+        <option value="HOUSE_INSPECTION">HOUSE_INSPECTION</option>
+        <option value="PREVIOUS_OWNERS">PREVIOUS_OWNERS</option>
+        <option value="CONTAINS_HISTORY_TRANSACTIONS">CONTAINS_HISTORY_TRANSACTIONS</option>
+    </select>
+    table
+    <input type="submit" value="Join" name="btnadd">
+</form>
+
 <div>
 <h2>Price Filter</h2>
 <form style="margin-top:-1.2vw;" method="post" action="<?php echo site_url('houses/filter'); ?>">

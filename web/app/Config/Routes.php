@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->post('/houses/select/(:any)', 'Houses::select');
 $routes->post('/table/', 'Houses::fromTable');
+$routes->post('/jointable/', 'Houses::joinTable');
 $routes->post('/houses/filter/', 'Houses::price_filter');
 $routes->add('/houses', 'Houses::index');
 $routes->add('/houses/new', 'Houses::new');

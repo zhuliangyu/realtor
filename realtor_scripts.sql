@@ -281,25 +281,25 @@ insert into NEIGHBORHOOD (NEIGHBOR_ID, NEIGHBOR_NAME, INCOME, SCHOOL_DISTRICT, P
 
 insert into NEIGHBORHOOD (NEIGHBOR_ID, NEIGHBOR_NAME, INCOME, SCHOOL_DISTRICT, POPULATION_SIZE) values (7, 'Marine', 180000, 'District 29', 92000);
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (0, 'Bruce Wayne', '416-000-1111');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (0, 'Bruce Wayne', '416-000-1111', '582-62-3914');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (1, 'Clint Barton', '416-000-1111');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (1, 'Clint Barton', '416-000-1111', '514-28-9480');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (2, 'Peter Parker', '416-000-2222');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (2, 'Peter Parker', '416-000-2222', '165-05-3292');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (3, 'Bruce Banner', '416-3333-4444');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (3, 'Bruce Banner', '416-3333-4444', '338-11-6378');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (4, 'Wonder Girl', '416-666-7777');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (4, 'Wonder Girl', '416-666-7777', '542-29-2796');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (5, 'Alfred Wayne', '605-000-1133');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (5, 'Alfred Wayne', '605-000-1133', '255-67-1128');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (6, 'Lisa Barton', '605-000-1199');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (6, 'Lisa Barton', '605-000-1199', '028-82-5765');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (7, 'James Parker', '605-000-0022');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (7, 'James Parker', '605-000-0022', '680-05-3975');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (8, 'Allen Banner', '605-3333-1144');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (8, 'Allen Banner', '605-3333-1144', '507-66-4013');
 
-insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE) values (9, 'Natasha Girl', '605-666-2277');
+insert into CUSTOMERS (CUSTOMER_ID, NAME, PHONE, SSN) values (9, 'Natasha Girl', '605-666-2277', '231-85-8172');
 
 insert into SELLER (CUSTOMER_ID) values (0);
 

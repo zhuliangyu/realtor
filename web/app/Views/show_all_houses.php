@@ -13,9 +13,9 @@
 <form action="table" method="post">
     Show
     <select name="table" id="table">
-        <option value="REALTOR">realtor</option>
-        <option value="PROPERTY_TYPE">property_type</option>
-        <option value="ADDRESS">Address</option>
+        <option value="REALTOR">REALTOR</option>
+        <option value="PROPERTY_TYPE">PROPERTY_TYPE</option>
+        <option value="ADDRESS">ADDRESS</option>
         <option value="BUYERS">BUYERS</option>
         <option value="CONTAINS_HISTORY_TRANSACTIONS">CONTAINS_HISTORY_TRANSACTIONS</option>
         <option value="CUSTOMERS">CUSTOMERS</option>
@@ -28,25 +28,27 @@
         <option value="SELLER">SELLER</option>
     </select>
     table
-    <input type="submit" value="Select" name="btnadd">
+    <input class="smbutton2" type="submit" value="Select" name="btnadd">
 
 </form>
 
 <style type="text/css">
     table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0vw;
-    padding: 0vw;
-    width: 100%;
-    table-layout: fixed;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0vw;
+        padding: 0vw;
+        width: 100%;
+        table-layout: fixed;
     }
+
     caption {
         font-size: 1.3em;
         margin: .75em 0 .75em;
         font-weight: bold;
         font-family: Trebuchet MS, Helvetica, sans-serif;
     }
+
     h2 {
         font-size: 1em;
         margin-left: 1vw;
@@ -60,21 +62,31 @@
         color: black;
         font-size: 1em;
         margin-right: 1vw;
-        margin-top: 3vw;
+        padding-bottom: 1vw;
         text-align: right
     }
 
     tr{
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
+        background-color: ghostwhite;
         border: 1px solid #ddd;
         padding: .35em;
     }
+
+    tr:hover{
+        background-color: #f5f5f5;
+    }
+
     .tg  {border-collapse:collapse;border-spacing:0;}
+
     .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Trebuchet MS, sans-serif;font-size:14px;
         overflow:hidden;padding:.625em;word-break:normal;}
+
     .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Trebuchet MS, sans-serif;font-size:14px;
-        font-weight:normal;overflow:hidden;padding:.85em;word-break:normal;}
+        font-weight:bold;overflow:hidden;padding:.80em;word-break:normal;background-color:lightsteelblue;}
+
     .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+
     .tg .tg-0lax{border-color:inherit;text-align:left;vertical-align:top}
 
     .button {
@@ -92,36 +104,87 @@
     }
     .button:visited {
         color: dodgerblue;
-        opacity: 0.8;
         text-decoration: none;
     }
     .button:hover {
         color: deepskyblue;
     }
 
-form {
-    border: 0px solid #ccc;
-    border-color: white;
-    border-collapse: collapse;
-    margin-left: 1vw;
-    padding-top: 2vw;
-    width: 100%;
-    table-layout: fixed;
-    font-family: Trebuchet MS, Helvetica, sans-serif;
-    font-size: 1em;
+    .smbutton2{
+        background-color: white;
+        border:solid;
+        border-width: thin;
+        border-color: royalblue;
+        color: royalblue;
+        margin-top: -0.2em;
+        margin-bottom: -0.2em;
+        padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+        border-radius: 2px;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.85em;
+        text-align: center;
+    }
+    .smbutton2:visited {
+        color: royalblue;
+        text-decoration: none;
+    }
+    .smbutton2:hover {
+        color: white;
+        background-color: royalblue;
     }
 
-.listings {
-  /* background-image: url("https://i.picsum.photos/id/1031/5446/3063.jpg?hmac=Zg0Vd3Bb7byzpvy-vv-fCffBW9EDp1coIbBFdEjeQWE"); */
-  background-image: url("https://i.ibb.co/9GsYgtV/building-metal-house-architecture-101808.jpg");
-  background-color: #cccccc;
-  height: 400px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  opacity: 0.9;
-}
+    .smbutton {
+        background-color: white;
+        border:solid;
+        border-width: thin;
+        border-color: dodgerblue;
+        color: dodgerblue;
+        margin-top: -0.2em;
+        margin-bottom: -0.2em;
+        padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+        border-radius: 2px;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.85em;
+        text-align: center;
+    }
+    .smbutton:visited {
+        color: dodgerblue;
+        text-decoration: none;
+    }
+    .smbutton:hover {
+        color: white;
+        background-color: dodgerblue;
+    }
+
+    form {
+        border: 0px solid #ccc;
+        background-color: ghostwhite;
+        border-color: white;
+        border-collapse: collapse;
+        padding-left: 1vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        width: 100%;
+        table-layout: fixed;
+        font-family: Trebuchet MS, Helvetica, sans-serif;
+        font-size: 1em;
+    }
+
+    .listings {
+        background-image: url("https://i.picsum.photos/id/1031/5446/3063.jpg?hmac=Zg0Vd3Bb7byzpvy-vv-fCffBW9EDp1coIbBFdEjeQWE");
+        /* background-image: url("https://i.ibb.co/9GsYgtV/building-metal-house-architecture-101808.jpg"); */
+        background-color: #cccccc;
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        opacity: 0.9;
+    }
 
 
 </style>
@@ -130,14 +193,14 @@ form {
     <caption>Show Houses</caption>
     <thead>
     <tr>
-        <th class="tg-0pky">HOUSE_ID</th>
-        <th class="tg-0pky">ADDRESS_ID</th>
-        <th class="tg-0pky">LISTING_DATE</th>
-        <th class="tg-0lax">LISTING_PRICE</th>
-        <th class="tg-0lax">SELLER_ID</th>
-        <th class="tg-0lax">REALTOR_ID</th>
-        <th class="tg-0lax">FLOOR_SPACE</th>
-        <th class="tg-0lax">PROPERTY_TYPE_ID</th>
+        <th class="tg-0pky">HOUSE ID</th>
+        <th class="tg-0pky">ADDRESS ID</th>
+        <th class="tg-0pky">LISTING DATE</th>
+        <th class="tg-0lax">LISTING PRICE $</th>
+        <th class="tg-0lax">SELLER ID</th>
+        <th class="tg-0lax">REALTOR ID</th>
+        <th class="tg-0lax">FLOOR SPACE</th>
+        <th class="tg-0lax">PROPERTY TYPE ID</th>
         <th class="tg-0lax">Operation</th>
     </tr>
     </thead>
@@ -153,7 +216,8 @@ form {
         <td class="tg-0pky"><?php echo $row->REALTOR_ID; ?></td>
         <td class="tg-0pky"><?php echo $row->FLOOR_SPACE; ?></td>
         <td class="tg-0pky"><?php echo $row->PROPERTY_TYPE_ID; ?></td>
-        <td class="tg-0pky"><button><a href="<?php echo site_url('houses/edit/' . $row->HOUSE_ID);?>">Update</a></button></td>
+        <!-- <td class="tg-0pky"><button><a href="<?php echo site_url('houses/edit/' . $row->HOUSE_ID);?>">Update</a></button></td> -->
+        <td class="tg-0pky"><a class="smbutton" href="<?php echo site_url('houses/edit/' . $row->HOUSE_ID);?>">Update</a></td>
     </tr>
     <?php } ?>
 
@@ -161,23 +225,23 @@ form {
 </table>
 
 <div>
-    <form style = "color: black; font-size: 0.8em; margin-top: 25px" method="post" action="<?php echo site_url('houses/select');?>">
-        Only Show
-        <label><input name="selection_checkbox[]" type="checkbox" value="HOUSE_ID" />HOUSE_ID </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="ADDRESS_ID" />ADDRESS_ID </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="LISTING_DATE" />LISTING_DATE </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="LISTING_PRICE" />LISTING_PRICE </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="SELLER_ID" />SELLER_ID </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="REALTOR_ID" />REALTOR_ID </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="FLOOR_SPACE" />FLOOR_SPACE </label>
-        <label><input name="selection_checkbox[]" type="checkbox" value="PROPERTY_TYPE_ID" />PROPERTY_TYPE_ID </label>
-
-        <input type="submit" value="Select" name="btnadd">
-    </form>
+    <h3>Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
 </div>
 
 <div>
-    <h3>Total Number of Listing: <?php echo $houseList_count[0]->COUNT ?></h3>
+    <form style = "margin-top:-2vw;" method="post" action="<?php echo site_url('houses/select');?>">
+        Only Show
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="HOUSE_ID" />HOUSE ID </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="ADDRESS_ID" />ADDRESS ID </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="LISTING_DATE" />LISTING DATE </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="LISTING_PRICE" />LISTING PRICE </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="SELLER_ID" />SELLER ID </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="REALTOR_ID" />REALTOR ID </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="FLOOR_SPACE" />FLOOR SPACE </label>
+        <label style="font-size: 0.9em;"><input name="selection_checkbox[]" type="checkbox" value="PROPERTY_TYPE_ID" />PROPERTY TYPE ID </label>
+
+        <input class="smbutton2" type="submit" value="Select" name="btnadd">
+    </form>
 </div>
 
 <form action="jointable" method="post">
@@ -188,17 +252,17 @@ form {
         <option value="CONTAINS_HISTORY_TRANSACTIONS">CONTAINS_HISTORY_TRANSACTIONS</option>
     </select>
     table
-    <input type="submit" value="Join" name="btnadd">
+    <input class="smbutton2" type="submit" value="Join" name="btnadd">
 </form>
 
 <div>
 <h2>Price Filter</h2>
-<form style="margin-top:-1.2vw;" method="post" action="<?php echo site_url('houses/filter'); ?>">
+<form style="padding-bottom: 2vw;" method="post" action="<?php echo site_url('houses/filter'); ?>">
     <label style="font-size: 0.9em" for="down">From</label>
     <input type="text" name="down">
     <label style="font-size: 0.9em" for="up">To</label>
     <input type="text" name="up">
-    <input type="submit" value="filter" name="btnfilter">
+    <input class="smbutton2" type="submit" value="Filter" name="btnfilter">
 </form>
 </div>
 

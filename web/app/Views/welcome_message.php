@@ -18,38 +18,39 @@ img {
 }
 
 .button {
-  background-color: white;
-  border: none;
-  border-radius:10px;
-  opacity: 0.8;
-  color: dodgerblue;
-  padding: 8px 8px;
-  font-family: Trebuchet MS, Helvetica, sans-serif;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 2.2vw;
-  position: center;
-  margin-left: 39vw;
-  margin-top: 9.6vw;
+    background-color: white;
+    border: none;
+    border-radius:10px;
+    opacity: 0.8;
+    color: dodgerblue;
+    padding: 8px 8px;
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2.2vw;
+    position: center;
+    margin-left: 39vw;
+    margin-top: 9.6vw;
 }
 
 .button:visited {
-  color: dodgerblue;
-  text-decoration: none;
-  opacity: 0.8;
+    color: dodgerblue;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 .button:hover {
-  color: deepskyblue;
+    background-color: dodgerblue;
+    color: white;
 }
 
 .body {
-  /* background-image: url("https://i.ibb.co/9GsYgtV/building-metal-house-architecture-101808.jpg"); */
-  background-image: url("https://i.ibb.co/7gJs5xn/assorted-color-wall-paint-house-photo-1370704.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    /* background-image: url("https://i.ibb.co/9GsYgtV/building-metal-house-architecture-101808.jpg"); */
+    background-image: url("https://i.ibb.co/7gJs5xn/assorted-color-wall-paint-house-photo-1370704.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 </style>
